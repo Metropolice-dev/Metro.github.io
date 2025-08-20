@@ -1,47 +1,63 @@
-<!DOCTYPE html> 
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>My site.</title>
-    <style>
-      body {
-        background: black;
-        color: white;
-        font-family: monospace;
-        text-align: center;
-        padding-top: 100px;
-      }
-      #grazie {
-        display: none;
-        font-size: 3em;
-        color: red;
-        text-shadow: 0 0 10px crimson, 0 0 30px darkred;
-        animation: glitch 0.3s infinite;
-      }
-      @keyframes glitch {
-        0% { transform: translate(0,0); }
-        20% { transform: translate(-2px,2px); }
-        40% { transform: translate(2px,-2px); }
-        60% { transform: translate(-3px,1px); }
-        80% { transform: translate(3px,-1px); }
-        100% { transform: translate(0,0); }
-      }
-    </style>
-  </head>
-  <body>
-    <h1>If you want to stalk me stalk me better.. :)</h1> 
-    <a href="https://iplogger.com/2zY3t6" id="linkCreepy" target="_blank">Gift for my stalkerz <3 </a>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>My site.</title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  body {
+    background:black;
+    color:white;
+    font-family:monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  #grazie {
+    display:none;
+    font-size:3em;
+    color:red;
+    text-shadow:0 0 10px crimson,0 0 30px darkred;
+    animation: glitch 0.3s infinite;
+  }
+  @keyframes glitch {
+    0% { transform: translate(0,0); }
+    20% { transform: translate(-2px,2px); }
+    40% { transform: translate(2px,-2px); }
+    60% { transform: translate(-3px,1px); }
+    80% { transform: translate(3px,-1px); }
+    100% { transform: translate(0,0); }
+  }
+  a {
+    margin-top: 20px;
+    color: white;
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+<h1>If you want to stalk me stalk me better.. :)</h1>
+<a href="https://iplogger.com/2zY3t6" id="linkCreepy">Gift for my stalkerz <3 </a>
 
-    <!-- Messaggio creepy -->
-    <div id="grazie">G r a z i e . . .</div>
+<div id="grazie">T H A N K S . . .</div>
 
-    <script>
-      const link = document.getElementById("linkCreepy");
-      const msg = document.getElementById("grazie");
+<script>
+const link = document.getElementById("linkCreepy");
+const msg = document.getElementById("grazie");
 
-      link.addEventListener("click", function() {
-        msg.style.display = "block"; // appare subito dopo il click
-      });
-    </script>
-  </body>
+link.addEventListener("click", function(e){
+  e.preventDefault(); // blocca redirect immediato
+  msg.style.display = "block"; // mostra subito il messaggio creepy
+  setTimeout(() => {
+    window.location.href = link.href; // poi vai sul link nella stessa scheda
+  }, 1500); // 1,5 secondi di attesa per vedere il messaggio
+});
+</script>
+</body>
 </html>
