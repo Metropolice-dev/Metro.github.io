@@ -30,28 +30,17 @@
   </head>
   <body>
     <h1>If you want to stalk me stalk me better.. :)</h1> 
-    <a href="https://iplogger.com/2zY3t6" id="linkCreepy">Gift for my stalkerz <3</a>
+    <a href="https://iplogger.com/2zY3t6" id="linkCreepy" target="_blank">Gift for my stalkerz <3 </a>
 
     <!-- Messaggio creepy -->
     <div id="grazie">G r a z i e . . .</div>
 
-    <audio id="creepySound" src="https://actions.google.com/sounds/v1/ambiences/scary_wind.ogg"></audio>
-
     <script>
       const link = document.getElementById("linkCreepy");
       const msg = document.getElementById("grazie");
-      const audio = document.getElementById("creepySound");
 
-      link.addEventListener("click", function(e) {
-        e.preventDefault(); // blocca temporaneamente il redirect
-        msg.style.display = "block"; // mostra il messaggio
-        audio.volume = 0.5;
-        audio.play().catch(()=>{});
-
-        // dopo 1.5 secondi vai sul link
-        setTimeout(() => {
-          window.location.href = link.href;
-        }, 1500);
+      link.addEventListener("click", function() {
+        msg.style.display = "block"; // appare subito dopo il click
       });
     </script>
   </body>
