@@ -1,10 +1,55 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
   <head>
     <meta charset="UTF-8">
     <title>My site.</title>
+    <style>
+      body {
+        background: black;
+        color: white;
+        font-family: monospace;
+        text-align: center;
+        padding-top: 100px;
+      }
+      #grazie {
+        display: none;
+        font-size: 3em;
+        color: red;
+        text-shadow: 0 0 10px crimson, 0 0 30px darkred;
+        animation: glitch 0.3s infinite;
+      }
+      @keyframes glitch {
+        0% { transform: translate(0,0); }
+        20% { transform: translate(-2px,2px); }
+        40% { transform: translate(2px,-2px); }
+        60% { transform: translate(-3px,1px); }
+        80% { transform: translate(3px,-1px); }
+        100% { transform: translate(0,0); }
+      }
+    </style>
   </head>
   <body>
-    <h1>If you want to stalk me stalk me better.. :)</h1> <a href="https://iplogger.com/2zY3t6">Gift for my stalkerz <3 </a>
+    <h1>If you want to stalk me stalk me better.. :)</h1> 
+    <a href="https://iplogger.com/2zY3t6" target="_blank">Gift for my stalkerz <3 </a>
 
+    <!-- Messaggio creepy -->
+    <div id="grazie">G r a z i e . . .</div>
 
+    <audio id="creepySound" src="https://actions.google.com/sounds/v1/ambiences/scary_wind.ogg"></audio>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        let ref = document.referrer;
+        if (ref && !ref.includes(window.location.hostname)) {
+          let msg = document.getElementById("grazie");
+          msg.style.display = "block";
+
+          // suono creepy
+          let audio = document.getElementById("creepySound");
+          audio.volume = 0.5;
+          audio.play().catch(()=>{});
+        }
+      });
+    </script>
+  </body>
+</html>
